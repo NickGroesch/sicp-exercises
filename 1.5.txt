@@ -1,0 +1,5 @@
+I think that if its applicitive it will spin out because it will try to evaluate y  which it thinks is p the function which just returns or refers to itself?--wrong-ish
+
+it spins out because applicitive-order is trying to evaluate (p) first in the test expression.
+
+Normal order, will never have to expand the p because we're always testing with 0.
