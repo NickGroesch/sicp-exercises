@@ -1,0 +1,36 @@
+(define (+ a b) (if (= a 0) b '(inc (+ (dec a) b))' )) 
+
+the quoted part is recursive instead of iterative wheras
+
+(+ (dec a) (inc b))
+
+is the equivalent iterative process, suitable for tail-recursive implementation
+
+iterative would be shaped like 
+
+(+ 5 4)
+(+ 4 5)
+(+ 3 6)
+(+ 2 7)
+(+ 1 8)
+9
+
+recursive would be shaped like
+
+(+ 5 4)
+(inc (+ 4 4))
+(inc (inc (+ 3 4)))
+(inc (inc (inc (+ 2 4))))
+(inc (inc (inc (inc (+ 1 4)))))
+(inc (inc (inc (inc (inc (+ 0 4))))))
+(inc (inc (inc (inc (inc 4)))))
+(inc (inc (inc (inc 5))))
+(inc (inc (inc 6)))
+(inc (inc 7))
+(inc 8)
+9
+
+(thats 31 extra pairs of parentheses (compared to 5) (not including this explanatory line))
+
+
+
