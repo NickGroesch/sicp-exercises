@@ -16,12 +16,12 @@
 
 (define (fiter N)
   (define (helper a b c counter)
-    (printf "helper ~a ~a ~a ~a \n" a b c counter)
+    (printf "helper ~a:  ~a ~a ~a : ~a :: ~a \n" counter a b c  (+ a b c)  (+ c (* 2 b) (* 3 a)))
     (if (= counter N)
-                        (+ c (* 2 b) (* 3 a))
-        (helper         (+ c (* 2 b) (* 3 a))
-                (* 2 c)
-                (* 3 b)
+                      (+ c (* 2 b) (* 3 a))
+        (helper  b
+                 c    
+                (+ c (* 2 b) (* 3 a))
                 (+ counter 1))
     ))
   (if (< N 3) N (helper 0 1 2 3))
