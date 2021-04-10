@@ -9,8 +9,7 @@
 
 
 (define (expand sequence)
-  (define (expander last seq)
-   
+  (define (expander last seq)   
     (if (null? seq)
         (list last)
         (cons (+ (car seq) last)
@@ -21,11 +20,11 @@
 
 
 (define (pascal n) 
-       (define (pascaliter seq iteration)
-          (printf "~a ~a\n" iteration seq)   
-               (if (= iteration n)
+        (define (pascaliter seq iteration)
+                (printf "~a ~a\n" iteration seq)   
+                (if (= iteration n)
                      seq
                      (pascaliter (expand seq) (+ iteration 1))))
-       (pascaliter (list 1) 0))
+        (pascaliter (list 1) 0))
 
 (pascal 9)
