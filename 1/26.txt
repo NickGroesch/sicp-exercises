@@ -1,0 +1,1 @@
+by writing out square instead of calling it, it requires double the evaluations in all the leave cases, greatly increasing the size of the space tree.

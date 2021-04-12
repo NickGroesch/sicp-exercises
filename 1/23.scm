@@ -79,4 +79,4 @@
 ;fast times are about 2/3 regular tests (this could also be ln2)
 
 ;why not all the way twice as fast?
-;perhaps because we added an evalation to next-divisor (which includes an extra if, (), and predicate
+;perhaps because we added an evalation to next-divisor (which includes an extra if, (), and predicate = test
