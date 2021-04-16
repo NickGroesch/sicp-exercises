@@ -7,13 +7,32 @@
 
 (define (inc num) (+ num 1))
 
+(define (square v)( * v v))
+
 (define (simpsons f a b n)
-     
-(/ (* (sum (+ (f (+ a ((/ (- a b) n)) ))
-              f2
-              f3)
-           1
-           inc
-           (/ n 2))
-      (/ (- a b) n))
-   3))
+     (let ((h (/ (- b a) n)))
+              
+     (define (pointfree num)
+             (printf "~a \n" num)
+              num
+             (let ((j (* 2 num)))
+               (let ((k (+ a (* h j)))
+                     (l (+ a (* h (- j 1))))
+                     (m (+ a (* h (- j 2)))))
+               (+ (f k) (* 4 (f l)) (f m) )))
+  )
+    (/ (* h
+             (sum   pointfree
+                    1
+                    inc
+                    (/ n 2)))
+       3)
+))
+
+(simpsons square 1 5 2)
+(simpsons square 1 5 8)
+
+(define (id x) x); (/ x 100))
+
+(simpsons id 1 5 2)
+(simpsons id 1 5 100)
